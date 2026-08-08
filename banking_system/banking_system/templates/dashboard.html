@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Dashboard</h3>
+
+<p>
+Balance :
+{{ account.balance }}
+</p>
+
+<p>
+Total Deposit :
+{{ total_deposit.amount__sum|default:0 }}
+</p>
+
+<p>
+Total Withdraw :
+{{ total_withdraw.amount__sum|default:0 }}
+</p>
+
+<p>
+Total Transactions :
+{{ total_transactions }}
+</p>
+
+{% endblock %}

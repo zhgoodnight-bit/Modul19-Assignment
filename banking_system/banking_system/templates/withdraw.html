@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Withdraw Money</h3>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button class="btn btn-danger">
+
+        Withdraw
+
+    </button>
+
+</form>
+
+{% endblock %}

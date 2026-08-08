@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Transactions</h3>
+
+<form method="GET">
+
+<select name="type">
+
+<option value="">
+All
+</option>
+
+<option value="deposit">
+Deposit
+</option>
+
+<option value="withdraw">
+Withdraw
+</option>
+
+</select>
+
+<input
+type="date"
+name="date"
+>
+
+<button class="btn btn-primary">
+
+Search
+
+</button>
+
+</form>
+
+<br>
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>Type</th>
+<th>Amount</th>
+<th>Date</th>
+<th>Balance After</th>
+
+</tr>
+
+{% for transaction in transactions %}
+
+<tr>
+
+<td>
+{{ transaction.transaction_type }}
+</td>
+
+<td>
+{{ transaction.amount }}
+</td>
+
+<td>
+{{ transaction.created_at }}
+</td>
+
+<td>
+{{ transaction.balance_after_transaction }}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
